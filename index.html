@@ -1,197 +1,168 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RYDEN | God Level Bot Creator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=VT323&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      background: #010101;
-      font-family: 'Orbitron', sans-serif;
-      color: #00fff7;
-      overflow-x: hidden;
-    }
-    header {
-      height: 100vh;
-      background: linear-gradient(135deg, #010101, #0a0a0a);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('https://media.tenor.com/Vi0YtzFq2hQAAAAd/matrix-code.gif') center/cover no-repeat;
-      opacity: 0.07;
-      z-index: 0;
-    }
-    .hero {
-      position: relative;
-      z-index: 2;
-    }
-    .hero h1 {
-      font-family: 'VT323', monospace;
-      font-size: 5em;
-      color: #00fff7;
-      animation: glitch 1s infinite;
-    }
-    @keyframes glitch {
-      0% { text-shadow: 2px 2px #ff00c1, -2px -2px #00fff7; }
-      50% { text-shadow: -2px 2px #00fff7, 2px -2px #ff00c1; }
-      100% { text-shadow: 2px -2px #00fff7, -2px 2px #ff00c1; }
-    }
-    .subtext {
-      font-size: 1.2em;
-      color: #baffff;
-      margin-top: 15px;
-    }
-    .btn {
-      margin-top: 25px;
-      padding: 12px 30px;
-      background: #00fff7;
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #00b9b0;
-      box-shadow: 0 0 15px #00fff7;
-    }
-    .skills-section {
-      padding: 60px 20px;
-      background: #111;
-      text-align: center;
-    }
-    .skills-section h2 {
-      font-size: 2.5em;
-      margin-bottom: 40px;
-      color: #00fff7;
-    }
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .skill {
-      background: #0f0f0f;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #00fff733;
-      position: relative;
-    }
-    .circle {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: conic-gradient(#00fff7 calc(var(--percent) * 1%), #222 0%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #00fff7;
-      font-size: 1.4em;
-      margin: 0 auto 10px;
-    }
-    .skill-name {
-      font-size: 1em;
-      margin-top: 10px;
-    }
-    .about-section {
-      background: #080808;
-      padding: 60px 20px;
-      color: #0ff;
-      text-align: center;
-    }
-    .about-section h2 {
-      font-size: 2.3em;
-      margin-bottom: 20px;
-    }
-    .about-section p {
-      max-width: 800px;
-      margin: auto;
-      font-size: 1.1em;
-      line-height: 1.6em;
-      color: #a0fefe;
-    }
-    footer {
-      background: #000;
-      padding: 20px;
-      text-align: center;
-      color: #0ff;
-      font-family: 'VT323', monospace;
-      font-size: 1em;
-    }
-    footer a {
-      color: #00fff7;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RYDEN | Professional Bot Creator & API Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header>
-    <div class="hero">
-      <h1>R Y D E N_</h1>
-      <p class="subtext">Bot Creator | API Dev | Terminal Master</p>
-      <a class="btn" href="https://t.me/RydenXGod" target="_blank">Join My Channel</a>
-    </div>
-  </header>  <section class="skills-section">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="skill" style="--percent: 80">
-        <div class="circle">80%</div>
-        <div class="skill-name">HTML</div>
-      </div>
-      <div class="skill" style="--percent: 85">
-        <div class="circle">85%</div>
-        <div class="skill-name">CSS</div>
-      </div>
-      <div class="skill" style="--percent: 75">
-        <div class="circle">75%</div>
-        <div class="skill-name">Node.js</div>
-      </div>
-      <div class="skill" style="--percent: 100">
-        <div class="circle">100%</div>
-        <div class="skill-name">Python</div>
-      </div>
-      <div class="skill" style="--percent: 95">
-        <div class="circle">95%</div>
-        <div class="skill-name">Bot Creator</div>
-      </div>
-      <div class="skill" style="--percent: 80">
-        <div class="circle">80%</div>
-        <div class="skill-name">BJS</div>
-      </div>
-      <div class="skill" style="--percent: 70">
-        <div class="circle">70%</div>
-        <div class="skill-name">TBC</div>
-      </div>
-      <div class="skill" style="--percent: 100">
-        <div class="circle">100%</div>
-        <div class="skill-name">API Dev</div>
-      </div>
-    </div>
-  </section>  <section class="about-section">
-    <h2>About Ryden</h2>
-    <p>
-      I'm <strong>Ryden</strong> — the digital architect behind hundreds of scalable bots and elite-level APIs.
-      From Telegram automation to web service integrations, I don't just code — I dominate the backend battlefield.
-      Languages mastered: Python, Node.js, TBC, BJS. I build tools that work smarter, faster, stronger.
-    </p>
-  </section>  <footer>
-    Built by <strong>Ryden</strong> | Contact via <a href="https://t.me/RydenXGod" target="_blank">@RydenXGod</a>
-  </footer>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">RYDEN_</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <p class="intro-text">Hello, I'm</p>
+                <h1>RYDEN_</h1>
+                <p class="tagline">Bot Creator | API Dev | Terminal Master</p>
+                <a href="https://t.me/RydenXGod" target="_blank" class="btn primary-btn">Join My Channel</a>
+                <a href="#contact" class="btn secondary-btn">Get in Touch</a>
+            </div>
+            <div class="hero-image">
+                <!-- Placeholder for a cool, abstract image or animation -->
+                <img src="https://via.placeholder.com/400" alt="Abstract Tech Art">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm <strong>Ryden</strong> — the digital architect behind hundreds of scalable bots and elite-level APIs.
+                        From Telegram automation to web service integrations, I don't just code — I dominate the backend battlefield.
+                        My expertise lies in crafting robust, efficient, and intelligent systems that streamline operations and deliver unparalleled performance.
+                    </p>
+                    <p>
+                        With a deep understanding of modern development practices and a passion for cutting-edge technology, I transform complex challenges into elegant, functional solutions. I thrive on building tools that work smarter, faster, and stronger, pushing the boundaries of what's possible in automation and data interaction.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder for a professional profile picture or abstract art -->
+                    <img src="https://via.placeholder.com/300" alt="Ryden Profile">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>My Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fab fa-python skill-icon"></i>
+                    <h3>Python</h3>
+                    <p>Advanced proficiency in backend development, scripting, and automation.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js-square skill-icon"></i>
+                    <h3>Node.js</h3>
+                    <p>Building scalable server-side applications and real-time systems.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-robot skill-icon"></i>
+                    <h3>Bot Development</h3>
+                    <p>Creating intelligent and responsive bots for various platforms.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-code skill-icon"></i>
+                    <h3>API Development</h3>
+                    <p>Designing and implementing robust RESTful APIs for seamless integration.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-terminal skill-icon"></i>
+                    <h3>Terminal Mastery</h3>
+                    <p>Expert in command-line tools and system automation.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <h3>HTML5</h3>
+                    <p>Structuring semantic and accessible web content.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt skill-icon"></i>
+                    <h3>CSS3</h3>
+                    <p>Crafting responsive and visually appealing user interfaces.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database skill-icon"></i>
+                    <h3>Database Management</h3>
+                    <p>Working with SQL and NoSQL databases for data persistence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                    <h3>Project Title 1</h3>
+                    <p>A brief description of Project 1, highlighting its key features and technologies used.</p>
+                    <a href="#" class="btn project-btn">View Project</a>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                    <h3>Project Title 2</h3>
+                    <p>A brief description of Project 2, highlighting its key features and technologies used.</p>
+                    <a href="#" class="btn project-btn">View Project</a>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                    <h3>Project Title 3</h3>
+                    <p>A brief description of Project 3, highlighting its key features and technologies used.</p>
+                    <a href="#" class="btn project-btn">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>Have a project in mind or just want to say hello? Feel free to reach out!</p>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                <p><i class="fab fa-telegram-plane"></i> Telegram: <a href="https://t.me/RydenXGod" target="_blank">@RydenXGod</a></p>
+                <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></p>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn primary-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 RYDEN_. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://t.me/RydenXGod" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                <!-- Add more social links as needed -->
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
+
+
