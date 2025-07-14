@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RYDEN | Professional Bot Creator & API Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
 /* General Styles */
 :root {
-    --primary-color: #00bcd4; /* Cyan */
-    --secondary-color: #ff4081; /* Pink */
-    --dark-bg: #1a1a2e; /* Dark Blue */
-    --darker-bg: #16213e; /* Even Darker Blue */
+    --primary-color: #00e676; /* Vibrant Green */
+    --secondary-color: #ff1744; /* Bright Red */
+    --dark-bg: #121212; /* Deep Dark Gray */
+    --darker-bg: #1e1e1e; /* Slightly Lighter Dark Gray */
     --text-color: #e0e0e0;
     --heading-color: #ffffff;
-    --accent-color: #00e5ff;
-    --border-color: rgba(255, 255, 255, 0.1);
+    --accent-color: #00c853; /* Darker Green for accents */
+    --border-color: rgba(255, 255, 255, 0.15);
     --font-poppins: 'Poppins', sans-serif;
     --font-roboto-mono: 'Roboto Mono', monospace;
+    --font-montserrat: 'Montserrat', sans-serif;
 }
 
 * {
@@ -37,6 +38,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
+    background-image: url('data:image/svg+xml,%3Csvg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.1" fill-rule="evenodd"%3E%3Cpath d="M5 0h1L0 6V5zM6 5v1H5z"/%3E%3C/g%3E%3C/svg%3E');
 }
 
 .container {
@@ -46,17 +48,19 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: var(--font-poppins);
+    font-family: var(--font-montserrat);
     color: var(--heading-color);
     font-weight: 700;
 }
 
 h2 {
-    font-size: 2.8em;
+    font-size: 3em;
     text-align: center;
     margin-bottom: 60px;
     position: relative;
     padding-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 h2::after {
@@ -65,10 +69,10 @@ h2::after {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
+    width: 100px;
+    height: 5px;
     background-color: var(--primary-color);
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 a {
@@ -83,45 +87,50 @@ a:hover {
 
 .btn {
     display: inline-block;
-    padding: 12px 25px;
-    border-radius: 5px;
+    padding: 14px 30px;
+    border-radius: 8px;
     font-weight: 600;
     text-transform: uppercase;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    font-family: var(--font-montserrat);
+    letter-spacing: 1px;
 }
 
 .primary-btn {
     background-color: var(--primary-color);
     color: var(--dark-bg);
+    box-shadow: 0 5px 15px rgba(0, 230, 118, 0.4);
 }
 
 .primary-btn:hover {
     background-color: var(--accent-color);
-    box-shadow: 0 0 15px var(--accent-color);
+    box-shadow: 0 8px 20px rgba(0, 200, 83, 0.6);
+    transform: translateY(-3px);
 }
 
 .secondary-btn {
     background-color: transparent;
     color: var(--primary-color);
     border-color: var(--primary-color);
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 .secondary-btn:hover {
     background-color: var(--primary-color);
     color: var(--dark-bg);
-    box-shadow: 0 0 15px var(--primary-color);
+    box-shadow: 0 8px 20px rgba(0, 230, 118, 0.6);
+    transform: translateY(-3px);
 }
 
 /* Navbar */
 .navbar {
     background-color: var(--darker-bg);
-    padding: 15px 0;
+    padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .navbar .container {
@@ -132,9 +141,10 @@ a:hover {
 
 .logo {
     font-family: var(--font-roboto-mono);
-    font-size: 1.8em;
+    font-size: 2.2em;
     font-weight: 700;
     color: var(--heading-color);
+    letter-spacing: -1px;
 }
 
 .nav-links {
@@ -143,23 +153,24 @@ a:hover {
 }
 
 .nav-links li {
-    margin-left: 30px;
+    margin-left: 40px;
 }
 
 .nav-links a {
     color: var(--text-color);
     font-weight: 600;
     position: relative;
+    font-size: 1.1em;
 }
 
 .nav-links a::after {
     content: '';
     position: absolute;
     width: 0;
-    height: 2px;
+    height: 3px;
     background-color: var(--primary-color);
     left: 0;
-    bottom: -5px;
+    bottom: -8px;
     transition: width 0.3s ease;
 }
 
@@ -169,13 +180,14 @@ a:hover {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #2c3e50 100%); /* Dark Blue to Dark Gray */
     min-height: 90vh;
     display: flex;
     align-items: center;
     text-align: left;
     position: relative;
     overflow: hidden;
+    padding: 80px 0;
 }
 
 .hero-section::before {
@@ -185,8 +197,8 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Subtle background pattern */
-    opacity: 0.05;
+    background: url('data:image/svg+xml,%3Csvg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.1" fill-rule="evenodd"%3E%3Cpath d="M5 0h1L0 6V5zM6 5v1H5z"/%3E%3C/g%3E%3C/svg%3E');
+    opacity: 0.1;
     z-index: 1;
 }
 
@@ -202,44 +214,60 @@ a:hover {
 .hero-content {
     flex: 1;
     min-width: 300px;
-    padding-right: 40px;
+    padding-right: 60px;
 }
 
 .intro-text {
-    font-size: 1.2em;
+    font-size: 1.4em;
     color: var(--primary-color);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-family: var(--font-montserrat);
+    font-weight: 600;
 }
 
 .hero-content h1 {
-    font-size: 4.5em;
-    margin-bottom: 10px;
+    font-size: 5.5em;
+    margin-bottom: 20px;
     line-height: 1.1;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .tagline {
     font-family: var(--font-roboto-mono);
-    font-size: 1.5em;
-    color: var(--accent-color);
-    margin-bottom: 30px;
+    font-size: 1.8em;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    opacity: 0.8;
 }
 
 .hero-image {
     flex: 1;
     min-width: 300px;
     text-align: center;
+    position: relative;
+    height: 400px; /* Define a height for the pseudo-element */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
+.hero-image::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: pulse 4s infinite alternate;
 }
 
-.hero-image img:hover {
-    transform: translateY(-10px);
+@keyframes pulse {
+    0% { transform: scale(0.9); opacity: 0.6; }
+    100% { transform: scale(1.1); opacity: 0.8; }
 }
 
 /* About Section */
@@ -253,7 +281,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 70px;
     flex-wrap: wrap;
 }
 
@@ -264,26 +292,42 @@ a:hover {
 }
 
 .about-text p {
-    margin-bottom: 20px;
-    font-size: 1.1em;
+    margin-bottom: 25px;
+    font-size: 1.15em;
     color: var(--text-color);
 }
 
 .about-text strong {
     color: var(--primary-color);
+    font-weight: 700;
 }
 
 .about-image {
     flex: 1;
     min-width: 250px;
+    position: relative;
+    height: 300px; /* Define a height for the pseudo-element */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.about-image img {
-    max-width: 100%;
-    height: auto;
+.about-image::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
     border-radius: 50%;
-    border: 5px solid var(--primary-color);
-    box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+    filter: blur(60px);
+    opacity: 0.5;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
 /* Skills Section */
@@ -295,38 +339,64 @@ a:hover {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
 }
 
 .skill-item {
     background-color: var(--darker-bg);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .skill-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary-color);
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px var(--primary-color);
 }
 
 .skill-icon {
-    font-size: 3.5em;
+    font-size: 4em;
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .skill-item h3 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: var(--heading-color);
 }
 
 .skill-item p {
-    font-size: 0.95em;
+    font-size: 1em;
     color: var(--text-color);
+    margin-top: 10px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    animation: fillSkillBar 1.5s ease-out forwards;
+}
+
+@keyframes fillSkillBar {
+    0% { width: 0; }
+    100% { /* width set by inline style */ }
 }
 
 /* Projects Section */
@@ -338,58 +408,64 @@ a:hover {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px;
 }
 
 .project-card {
     background-color: var(--dark-bg);
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--secondary-color);
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px var(--secondary-color);
 }
 
 .project-card img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
     border-bottom: 1px solid var(--border-color);
 }
 
 .project-card h3 {
-    font-size: 1.8em;
-    margin: 20px 0 10px;
+    font-size: 2em;
+    margin: 25px 0 15px;
     color: var(--heading-color);
 }
 
 .project-card p {
-    padding: 0 20px;
-    font-size: 0.95em;
+    padding: 0 25px;
+    font-size: 1em;
     color: var(--text-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    flex-grow: 1;
 }
 
 .project-btn {
     display: inline-block;
     background-color: var(--secondary-color);
     color: var(--dark-bg);
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: var(--font-montserrat);
+    letter-spacing: 1px;
 }
 
 .project-btn:hover {
-    background-color: #ff6e9e;
-    box-shadow: 0 0 15px var(--secondary-color);
+    background-color: #ff4d6d;
+    box-shadow: 0 8px 20px rgba(255, 23, 68, 0.6);
+    transform: translateY(-3px);
 }
 
 /* Contact Section */
@@ -400,30 +476,31 @@ a:hover {
 }
 
 .contact-section p {
-    font-size: 1.1em;
+    font-size: 1.15em;
     margin-bottom: 40px;
 }
 
 .contact-info {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .contact-info p {
-    font-size: 1.2em;
-    margin-bottom: 15px;
+    font-size: 1.3em;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .contact-info i {
     color: var(--primary-color);
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 .contact-info a {
     color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
@@ -431,57 +508,61 @@ a:hover {
 }
 
 .contact-form {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 }
 
 .contact-form input,
 .contact-form textarea {
     background-color: var(--darker-bg);
     border: 1px solid var(--border-color);
-    padding: 15px;
-    border-radius: 5px;
+    padding: 18px;
+    border-radius: 8px;
     color: var(--text-color);
     font-family: var(--font-poppins);
-    font-size: 1em;
+    font-size: 1.05em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.5);
 }
 
 .contact-form button {
     background-color: var(--primary-color);
     color: var(--dark-bg);
     border: none;
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-size: 1.1em;
+    padding: 18px 35px;
+    border-radius: 8px;
+    font-size: 1.2em;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    font-family: var(--font-montserrat);
+    letter-spacing: 1px;
 }
 
 .contact-form button:hover {
     background-color: var(--accent-color);
-    box-shadow: 0 0 20px var(--accent-color);
+    box-shadow: 0 0 25px rgba(0, 200, 83, 0.7);
+    transform: translateY(-3px);
 }
 
 /* Footer */
 footer {
     background-color: var(--darker-bg);
-    padding: 30px 0;
+    padding: 40px 0;
     text-align: center;
     border-top: 1px solid var(--border-color);
 }
@@ -494,19 +575,20 @@ footer .container {
 }
 
 footer p {
-    font-size: 0.9em;
+    font-size: 0.95em;
     color: var(--text-color);
 }
 
 .social-links a {
     color: var(--text-color);
-    font-size: 1.5em;
-    margin-left: 20px;
-    transition: color 0.3s ease;
+    font-size: 1.8em;
+    margin-left: 25px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-links a:hover {
     color: var(--primary-color);
+    transform: translateY(-3px);
 }
 
 /* Responsive Design */
@@ -516,13 +598,13 @@ footer p {
     }
 
     .nav-links {
-        margin-top: 20px;
+        margin-top: 25px;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     .nav-links li {
-        margin: 0 15px 10px;
+        margin: 0 18px 12px;
     }
 
     .hero-section .container {
@@ -532,20 +614,20 @@ footer p {
 
     .hero-content {
         padding-right: 0;
-        margin-top: 40px;
+        margin-top: 50px;
     }
 
     .hero-content h1 {
-        font-size: 3.5em;
+        font-size: 4em;
     }
 
     .tagline {
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
 
     .secondary-btn {
         margin-left: 0;
-        margin-top: 15px;
+        margin-top: 20px;
     }
 
     .about-content {
@@ -563,51 +645,51 @@ footer p {
 
     footer .container {
         flex-direction: column;
-        gap: 20px;
+        gap: 25px;
     }
 
     .social-links {
-        margin-top: 15px;
+        margin-top: 20px;
     }
 
     .social-links a {
-        margin: 0 10px;
+        margin: 0 12px;
     }
 }
 
 @media (max-width: 480px) {
     h2 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
     .hero-content h1 {
-        font-size: 2.8em;
+        font-size: 3.5em;
     }
 
     .tagline {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
+        padding: 12px 25px;
+        font-size: 1em;
     }
 
     .skill-item,
     .project-card {
-        padding: 20px;
+        padding: 30px;
     }
 
     .skill-icon {
-        font-size: 3em;
+        font-size: 3.5em;
     }
 
     .project-card h3 {
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
 
     .contact-info p {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 }
 
@@ -617,7 +699,7 @@ footer p {
 <body>
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">RYDEN_</a>
+            <a href="#" class="logo">RYDEN</></a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -632,14 +714,13 @@ footer p {
         <div class="container">
             <div class="hero-content">
                 <p class="intro-text">Hello, I'm</p>
-                <h1>RYDEN_</h1>
+                <h1>RYDEN</></h1>
                 <p class="tagline">Bot Creator | API Dev | Terminal Master</p>
                 <a href="https://t.me/RydenXGod" target="_blank" class="btn primary-btn">Join My Channel</a>
                 <a href="#contact" class="btn secondary-btn">Get in Touch</a>
             </div>
             <div class="hero-image">
-                <!-- Placeholder for a cool, abstract image or animation -->
-                <img src="https://via.placeholder.com/400" alt="Abstract Tech Art">
+                <!-- Abstract visual effect instead of an image -->
             </div>
         </div>
     </section>
@@ -659,8 +740,7 @@ footer p {
                     </p>
                 </div>
                 <div class="about-image">
-                    <!-- Placeholder for a professional profile picture or abstract art -->
-                    <img src="https://via.placeholder.com/300" alt="Ryden Profile">
+                    <!-- Abstract visual effect instead of an image -->
                 </div>
             </div>
         </div>
@@ -673,41 +753,65 @@ footer p {
                 <div class="skill-item">
                     <i class="fab fa-python skill-icon"></i>
                     <h3>Python</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%;"></div>
+                    </div>
                     <p>Advanced proficiency in backend development, scripting, and automation.</p>
                 </div>
                 <div class="skill-item">
                     <i class="fab fa-js-square skill-icon"></i>
                     <h3>Node.js</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%;"></div>
+                    </div>
                     <p>Building scalable server-side applications and real-time systems.</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-robot skill-icon"></i>
                     <h3>Bot Development</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;"></div>
+                    </div>
                     <p>Creating intelligent and responsive bots for various platforms.</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-code skill-icon"></i>
                     <h3>API Development</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%;"></div>
+                    </div>
                     <p>Designing and implementing robust RESTful APIs for seamless integration.</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-terminal skill-icon"></i>
                     <h3>Terminal Mastery</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 75%;"></div>
+                    </div>
                     <p>Expert in command-line tools and system automation.</p>
                 </div>
                 <div class="skill-item">
                     <i class="fab fa-html5 skill-icon"></i>
                     <h3>HTML5</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 70%;"></div>
+                    </div>
                     <p>Structuring semantic and accessible web content.</p>
                 </div>
                 <div class="skill-item">
                     <i class="fab fa-css3-alt skill-icon"></i>
                     <h3>CSS3</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 65%;"></div>
+                    </div>
                     <p>Crafting responsive and visually appealing user interfaces.</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-database skill-icon"></i>
                     <h3>Database Management</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%;"></div>
+                    </div>
                     <p>Working with SQL and NoSQL databases for data persistence.</p>
                 </div>
             </div>
@@ -760,7 +864,7 @@ footer p {
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 RYDEN_. All rights reserved.</p>
+            <p>&copy; 2025 RYDEN</>. All rights reserved.</p>
             <div class="social-links">
                 <a href="https://t.me/RydenXGod" target="_blank"><i class="fab fa-telegram-plane"></i></a>
                 <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
